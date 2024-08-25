@@ -1,0 +1,54 @@
+------ Програм, що реалізує рекомендацію щодо прийняття рішення ------
+
+
+Приклад оцінки почуттів для вводу
+
+| 10 | Дуже добре |
+| 8 | Добре |
+| 6 | Посередньо |
+| 3 | Погано |
+| 1 | Дуже погано |
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double probRain;
+    cout << "Введіть ймовірність дощу: ";
+    cin >> probRain;
+
+    double UtilityHomeRain, UtilityHomeSun;
+     cout << " Оцінка відчуття того, щоб залишитися вдома під час дощу: ";
+      cin >> UtilityHomeRain;
+
+       cout << " Оцінка відчуття того, щоб залишитися вдома під час сонця: ";
+      cin >> UtilityHomeSun;
+
+    double UtilityForestRain, UtilityForestSun;
+     cout << " Оцінка відчуття того, щоб піти в ліс під час дощу: ";
+      cin >> UtilityForestRain;
+
+       cout << " Оцінка відчуття того, щоб піти в ліс під час сонця: ";
+      cin >> UtilityForestSun;
+
+
+    double W_home = probRain*UtilityHomeRain + (1 - probRain)*UtilityHomeSun;
+    double W_forest = probRain*UtilityForestRain + (1 - probRain)*UtilityForestSun;
+
+    cout << "Корисність залишитися вдома:" << W_home << endl;
+    cout << "Корисність піти в ліс:" << W_forest << endl;
+
+    if (W_home > W_forest) {
+        cout << "Рекомендується залишитися вдома" << endl;
+    }
+    else {
+       cout << "Рекомендується піти в ліс" << endl; 
+    }
+
+    return 0;
+}
+
+
+
