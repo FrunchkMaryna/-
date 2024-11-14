@@ -1,5 +1,6 @@
 //9 variant
 
+
 import numpy as np
 
 # Матриця очікуваних доходів
