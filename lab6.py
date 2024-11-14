@@ -1,3 +1,4 @@
+
 //9 variant
 
 import numpy as np
